@@ -1,0 +1,9 @@
+version: '3'
+services:
+  fake-alarm-bot:
+    build: .
+    restart: always
+    environment:
+      - TELOXIDE_TOKEN=${TELOXIDE_TOKEN}
+      - MONGO_DATABASE_NAME=${TIKTONICK_DB_NAME}
+      - MONGO_CON_STRING=${TIKTONICK_MONGO_CON_STRING}
