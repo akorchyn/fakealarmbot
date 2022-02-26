@@ -91,7 +91,7 @@ async fn forward_handle(message: Message, bot: AutoSend<Bot>, db: mongo::MongoDa
                 };
             }
             _ => {
-                bot.send_message(message.chat_id(), "Не довіряйте інформації від користувачів. Вона не є перевіреною.").reply_to_message_id(message.id).await?;
+                // bot.send_message(message.chat_id(), "Не довіряйте інформації від користувачів. Вона не є перевіреною.").reply_to_message_id(message.id).await?;
             }
         }
     }
