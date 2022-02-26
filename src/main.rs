@@ -87,11 +87,11 @@ async fn forward_handle(message: Message, bot: AutoSend<Bot>, db: mongo::MongoDa
         match forwarded {
             ForwardedFrom::Chat(chat) => {
                 if db.is_chat_restricted(message.chat_id(), chat.id).await? {
-                    bot.send_message(message.chat_id(), "ОБЕРЕЖНО: група находиться розповсюджує фейки").reply_to_message_id(message.id).await?;
+                    bot.send_message(message.chat_id(), "ОБЕРЕЖНО: група розповсюджує фейки").reply_to_message_id(message.id).await?;
                 };
             }
             _ => {
-                bot.send_message(message.chat_id(), "Не довіряйте інформації від користувачів, це неперевірена інформація").reply_to_message_id(message.id).await?;
+                bot.send_message(message.chat_id(), "Не довіряйте інформації від користувачів. Вона не є перевіреною.").reply_to_message_id(message.id).await?;
             }
         }
     }
