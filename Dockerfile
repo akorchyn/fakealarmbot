@@ -20,4 +20,4 @@ FROM debian:latest AS runtime
 WORKDIR app
 RUN apt update -y && apt install -y ca-certificates
 COPY --from=builder /app/target/release/fakealarmbot /usr/local/bin
-ENTRYPOINT ["/usr/local/bin/fakealarmbotg"]
+ENTRYPOINT ["/usr/local/bin/fakealarmbot"]
